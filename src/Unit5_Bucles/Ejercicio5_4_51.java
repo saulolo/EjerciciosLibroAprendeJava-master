@@ -26,11 +26,35 @@ public class Ejercicio5_4_51 {
         System.out.println("--------------------");
 
         String inputNumero = JOptionPane.showInputDialog("Introduzca un número entero (mayor que cero): ");
-        int numero = Integer.parseInt(inputNumero);
+        int numeroIntroducido = Integer.parseInt(inputNumero);
 
+        int numero = numeroIntroducido;
+        int volteado = 0;
+        boolean numeroComido = false;
 
+        while (numero > 0) {
+            if ((numero % 10 != 0) && (numero % 10 != 8)) {
+                volteado = (volteado * 10) + (numero % 10);
+            } else {
+                numeroComido = true;
+            }
+            numero /= 10;
+        }
 
+        numero = volteado;
+        volteado = 0;
 
+        while (numero > 0) {
+            volteado = (volteado * 10) + (numero % 10);
+            numero /= 10;
+        }
+
+        if (numeroComido) {
+            System.out.print("Después de haber sido comido por el gusano numérico");
+            System.out.println(" se queda en " + volteado + ".");
+        } else {
+            System.out.println("El gusano numérico no se ha comido ningún dígito.");
+        }
     }
 }
 
