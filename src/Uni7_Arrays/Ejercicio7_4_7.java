@@ -20,6 +20,38 @@ public class Ejercicio7_4_7 {
         JOptionPane.showMessageDialog(null, into);
 
 
-        
+        int[] numeros = new int[100];
+        int i;
+
+        // Rellena el array con números aleatorios
+        for (i = 0; i < 100; i++) {
+            numeros[i] = (int)(Math.random() * 21);
+        }
+
+        System.out.print("Números generados: ");
+        for (i = 0; i < 100; i++) {
+            System.out.print(numeros[i] + " ");
+
+        }
+        System.out.println(); // Nueva línea
+
+        System.out.print("Introduzca un número de los que se han mostrado: ");
+        int valor1 = input.nextInt();
+        input.nextLine(); // Consumir el carácter de nueva línea
+
+        System.out.print("Introduzca el valor por el que quiere sustituirlo: ");
+        int valor2 = input.nextInt();
+
+        System.out.println("Números modificados: ");
+        for (i = 0; i < 100; i++) {
+            if (numeros[i] == valor1) {
+                numeros[i] = valor2;
+            }
+            System.out.print(numeros[i] + " ");
+        }
+        System.out.println(); // Nueva línea
+
+
     }
+
 }
